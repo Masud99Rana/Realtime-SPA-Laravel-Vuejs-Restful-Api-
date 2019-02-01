@@ -20,6 +20,13 @@
 			color="green"
 			type="submit"
 			>Login</v-btn>
+
+
+			<router-link to="/signup">
+	      	 	<v-btn color="blue">Sign Up</v-btn>
+	        </router-link>
+
+
 	  </v-form>
   </v-container>
 </template>
@@ -35,10 +42,18 @@
 				}
 			}
 		},
+
+		created(){
+			if(User.loggedIn()){
+				this.$router.push({name:'forum'})
+			}
+		},
+
 		methods:{
 			login(){
 		
 				User.login(this.form)
+				//this.$router.push({name:'forum'}) //it rediect twice the form when we use window.location ='/forum'  on User.js 
 			}
 		}
 	}

@@ -18,10 +18,11 @@ Vue.use(Vuetify)
 import User from './Helpers/User'
 window.User = User
 
+window.EvenBus = new Vue();
+
 // User.logout()
 // console.log(User.loggedIn())
 
- console.log(User.id())
 
 
 /**
