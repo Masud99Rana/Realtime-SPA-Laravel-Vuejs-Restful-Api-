@@ -60,6 +60,10 @@ class User {
 	own(id){
 		return this.id() == id
 	}
+
+	admin(){
+		return this.id() ==11
+	}
 }
 
 

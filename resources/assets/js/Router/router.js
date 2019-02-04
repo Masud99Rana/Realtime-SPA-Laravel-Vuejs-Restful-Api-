@@ -10,6 +10,8 @@ import Forum from '../components/forum/Forum';
 import Read from '../components/forum/read';
 import Create from '../components/forum/create';
 
+import CreateCategory from '../components/category/CreateCategory';
+
 
 const routes = [
   { path: '/login', component: Login },
@@ -18,6 +20,8 @@ const routes = [
   { path: '/forum', component: Forum, name:'forum'},
   { path: '/ask', component: Create},
   { path: '/question/:slug', component: Read, name:'read'},
+
+  { path: '/category', component: CreateCategory},
 ]
 
 const router = new VueRouter({
