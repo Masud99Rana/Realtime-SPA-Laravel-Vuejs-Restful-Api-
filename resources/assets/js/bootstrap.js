@@ -57,9 +57,10 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: "7bcd8c2a8fb06cbed81b",
-    cluster: "ap1",
-    encrypted: true,
+    key: "myKey",
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    disableStats: true,
     auth:{
     	headers:{
     		Authorization : JwtToken

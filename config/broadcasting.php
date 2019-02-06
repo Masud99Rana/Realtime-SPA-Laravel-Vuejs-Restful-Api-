@@ -38,6 +38,9 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'encrypted' => true,
+                'host' => 'http://realtimeapp',
+                'port' => 6001,
+                'scheme' => 'http'
             ],
         ],
 

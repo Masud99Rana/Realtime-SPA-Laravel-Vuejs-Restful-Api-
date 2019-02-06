@@ -20,13 +20,14 @@ const routes = [
   { path: '/logout', component: Logout },
   { path: '/signup', component: Signup },
   { path: '/forum', component: Forum, name:'forum'},
-  { path: '/ask', component: Create},
+  { path: '/ask/:slug', component: Create},
   { path: '/question/:slug', component: Read, name:'read'},
 
   { path: '/category', component: CreateCategory},
 ]
 
 const router = new VueRouter({
+  //base: window.location.pathname,
   routes, // short for `routes: routes`
   hashbang: false,
   mode: 'history'
