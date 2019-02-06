@@ -1,7 +1,11 @@
 <template>
-	<v-toolbar>
+	<v-toolbar color="indigo" dark>
 	    <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
-	    <v-toolbar-title>Masud</v-toolbar-title>
+	    <v-toolbar-title>
+	    	<router-link class="white--text" to="/">
+	    		Masud Rana
+	    	</router-link>
+	    </v-toolbar-title>
 	    <v-spacer></v-spacer>
 	    <app-notification v-if="loggedIn"></app-notification>
 	    <div class="hidden-sm-and-down">
@@ -53,5 +57,7 @@ import AppNotification from './AppNotification'
 </script>
 
 <style>
-
+	.application a {
+	    text-decoration: none;
+	}
 </style>
