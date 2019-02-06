@@ -9,7 +9,7 @@
 				<span class="grey--text">{{data.user}} said {{data.created_at}}</span>
 				</div>
 				<v-spacer></v-spacer>
-				<v-btn color="teal" dark>{{data.reply_count}} Replies</v-btn>
+				<v-btn color="teal" dark>{{replyCount}} Replies</v-btn>
 			</v-card-title>
 
 			<v-card-text v-html="body">				
@@ -37,7 +37,8 @@
 
 		data(){
 			return {
-				own: User.own(this.data.user_id)
+				own: User.own(this.data.user_id),
+				replyCount: this.data.reply_count
 			}
 		},
 
@@ -45,6 +46,29 @@
 			body(){
 				return md.parse(this.data.body)
 			}
+		},
+
+		created(){
+			EvenBus.$on('newReply',()=>{
+				this.replyCount++
+			})
+
+			Echo.private('App.User.' + User.id())
+                .notification((notification) => {
+                    this.replyCount++
+            });
+
+			EvenBus.$on('deleteReply',()=>{
+				this.replyCount--
+			})
+
+
+			Echo.channel('deleteReplyChannel')
+			.listen('DeleteReplyEvent',(e) => {
+				
+				this.replyCount--
+			    
+			})
 		},
 
 		methods:{

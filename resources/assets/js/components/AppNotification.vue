@@ -52,6 +52,7 @@
 			          this.unread = res.data.unread;
 			          this.unreadCount = res.data.unread.length;
 			        })
+			    .catch(error => Exception.handle(error))
 
 			},
 

@@ -16,7 +16,21 @@ class Token{
 	}
 
 	decode(payload){
-		return JSON.parse(atob(payload))
+		if(this.isBase64(payload)){
+
+			return JSON.parse(atob(payload))
+		}
+		return false
+	}
+
+	//exception handling
+	isBase64(str){
+		try{
+			return btoa(atob(str)).replace(/=/g,"") == str
+		}
+		catch(err){
+			return false
+		}
 	}
 }
 
