@@ -6,10 +6,10 @@
         </v-btn>
       <v-list>
 		<v-list-tile v-for="item in unread" :key="item.id">
-			<router-link :to="item.path">				
-            	<v-list-tile-title @click="readIt(item)">{{item.question}}</v-list-tile-title>
-			</router-link>
+			
+			<a :href="'http://realtimeapp/'+item.path" @click="readIt(item)">{{item.question}}</a>
         </v-list-tile>
+        <br>
 
         <v-divider></v-divider>
 

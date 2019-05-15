@@ -101687,7 +101687,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -101916,32 +101915,23 @@ var render = function() {
             "v-list",
             [
               _vm._l(_vm.unread, function(item) {
-                return _c(
-                  "v-list-tile",
-                  { key: item.id },
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: item.path } },
-                      [
-                        _c(
-                          "v-list-tile-title",
-                          {
-                            on: {
-                              click: function($event) {
-                                _vm.readIt(item)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.question))]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
+                return _c("v-list-tile", { key: item.id }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "http://realtimeapp/" + item.path },
+                      on: {
+                        click: function($event) {
+                          _vm.readIt(item)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(item.question))]
+                  )
+                ])
               }),
+              _vm._v(" "),
+              _c("br"),
               _vm._v(" "),
               _c("v-divider"),
               _vm._v(" "),
@@ -102411,7 +102401,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_parallex___default.a }, { path: '/login', component: __WEBPACK_IMPORTED_MODULE_3__components_login_Login___default.a }, { path: '/logout', component: __WEBPACK_IMPORTED_MODULE_4__components_login_Logout___default.a }, { path: '/signup', component: __WEBPACK_IMPORTED_MODULE_5__components_login_signup___default.a }, { path: '/forum', component: __WEBPACK_IMPORTED_MODULE_6__components_forum_Forum___default.a, name: 'forum' }, { path: '/ask/:slug', component: __WEBPACK_IMPORTED_MODULE_8__components_forum_create___default.a }, { path: '/question/:slug', component: __WEBPACK_IMPORTED_MODULE_7__components_forum_read___default.a, name: 'read' }, { path: '/category', component: __WEBPACK_IMPORTED_MODULE_9__components_category_CreateCategory___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_parallex___default.a }, { path: '/login', component: __WEBPACK_IMPORTED_MODULE_3__components_login_Login___default.a }, { path: '/logout', component: __WEBPACK_IMPORTED_MODULE_4__components_login_Logout___default.a }, { path: '/signup', component: __WEBPACK_IMPORTED_MODULE_5__components_login_signup___default.a }, { path: '/forum', component: __WEBPACK_IMPORTED_MODULE_6__components_forum_Forum___default.a, name: 'forum' }, { path: '/ask', component: __WEBPACK_IMPORTED_MODULE_8__components_forum_create___default.a }, { path: '/question/:slug', component: __WEBPACK_IMPORTED_MODULE_7__components_forum_read___default.a, name: 'read' }, { path: '/category', component: __WEBPACK_IMPORTED_MODULE_9__components_category_CreateCategory___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   //base: window.location.pathname,

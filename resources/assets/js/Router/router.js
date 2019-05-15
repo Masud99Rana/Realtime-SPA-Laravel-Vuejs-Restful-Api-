@@ -20,7 +20,7 @@ const routes = [
   { path: '/logout', component: Logout },
   { path: '/signup', component: Signup },
   { path: '/forum', component: Forum, name:'forum'},
-  { path: '/ask/:slug', component: Create},
+  { path: '/ask', component: Create},
   { path: '/question/:slug', component: Read, name:'read'},
 
   { path: '/category', component: CreateCategory},

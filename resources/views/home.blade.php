@@ -4,6 +4,9 @@
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
   <title>Single page forum</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
